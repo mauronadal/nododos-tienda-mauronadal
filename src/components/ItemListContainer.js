@@ -1,11 +1,16 @@
-import React from "react";
+import { Component } from "react";
 
 
-export default function ItemListContainer() {
-    return (
+class ItemListContainer extends Component{
 
-        <div>
-            <p>Listado de Productos</p>
-        </div>
-    )
+    render() {
+        return (
+
+
+            <p>Listado de  {this.props.texto}</p>
+
+        )
+    }
 }
+
+export default ItemListContainer;
