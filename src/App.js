@@ -2,16 +2,17 @@
 import './App.css';
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
-import ItemCount from './components/ItemCount';
+
+import './index.css';
 
 function App() {
   return (
-    
-    <div className="App">
+
+    <div className="App" >
       <NavBar />
-      
-      <ItemListContainer texto="Productos" />
-      <ItemCount />
+      <div className='cart-container'>
+      <ItemListContainer texto="Productos" className='producto-container'/>
+      </div>
     </div>
   );
 }

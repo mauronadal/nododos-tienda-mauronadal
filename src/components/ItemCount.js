@@ -1,26 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 
-export const ItemCount = ({ value = 0 }) => {
-    const [counter, setCounter] = useState(value);
+import './styles/ItemCount.css';
 
-    const handleUp = () => setCounter((counterPref) => counterPref + 1);
-    const handleDown = () => setCounter((counterPref) => counterPref - 1);
-    const handleReset = () => setCounter(value);
+const ItemCount = ({ initial, stock, onAdd }) => {
+  
+  const [cantidad, setCantidad] = useState(initial);
 
-    return (
-        <>
-            <h1>Contador</h1>
-            <div>
-                <h2>{counter}</h2>
-                <div>
-                    <button onClick={handleDown}>-1</button>
-                    <button onClick={handleReset}>Borrar</button>
-                    <button onClick={handleUp}>+1</button>
+  const addProducto = (num) => {
+    setCantidad(cantidad + num);
+  };
 
-                </div>
-            </div>
-        </>
-    );
+  return (
+    <div className="countContainer">
+      <div className="countContainerContador">
+        <button className="countContainerButton" onClick={() => addProducto(-1)} disabled={cantidad === initial ? true : null}>-</button>
+        <span className="countContainerCantidad">{cantidad}</span>
+        <button className="countContainerButton" onClick={() => addProducto(+1)} disabled={cantidad === stock ? true : null}>+</button>
+      </div>
+
+      <button className="boton_agregar"  onClick={() => onAdd(cantidad)} disabled={stock === 0 ? true : null}>Añadir</button>
+    </div>
+  );
 };
+
+
 
 export default ItemCount;

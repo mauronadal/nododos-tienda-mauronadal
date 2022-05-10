@@ -1,0 +1,12 @@
+.card-info{
+    color: var(--just-white);
+    text-decoration: solid;
+    background-color: var(--primary-color);
+    
+}
+.card{
+   width: 20rem;
+   height: 40rem;
+}
+
+ 

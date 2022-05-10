@@ -1,0 +1,19 @@
+.item-list-container {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--body-bg-color);
+       
+  }
+  
+  .item-list-container__title {
+    color: var(--just-white);
+    text-align: center;
+    margin: 20px;
+    font-size: 2rem;
+    
+  }
+
+
+
+  
+  

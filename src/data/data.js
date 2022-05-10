@@ -1,0 +1,68 @@
+
+export const dbproductos = [
+
+  {
+    id: 1,
+    nombre: 'Fuente Lnz XT 850-PM 850W',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-01.jpg',
+    info: 'SALE',
+    precio: 6099,
+    stock: 10,
+  },
+  {
+    id: 2,
+    nombre: 'Silla Gamer Aerocool Admiral',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-02.jpg',
+    info: 'NEW',
+    precio: 40999,
+    stock: 10,
+  },
+  {
+    id: 3,
+    nombre: 'Auricular Redragon H260',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-03.jpg',
+    info: 'SALE',
+    precio: 2369,
+    stock: 10,
+  },
+  {
+    id: 4,
+    nombre: 'MotherBoard Gigabyte B450M DS3H',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-04.jpg',
+    info: 'SALE',
+    precio: 16879,
+    stock: 10,
+  },
+  {
+    id: 5,
+    nombre: 'Monitor Gamer 24 Samsung Curvo C24F390FHL',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-05.jpg',
+    info: 'SALE',
+    precio: 31299,
+    stock: 10,
+  },
+  {
+    id: 6,
+    nombre: 'Teclado y Mouse Logitech MK235 Inalámbrico Gris',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-06.jpg',
+    info: 'NEW',
+    precio: 2259,
+    stock: 10,
+  },
+  {
+    id: 7,
+    nombre: 'Cámara Web Logitech C922',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-07.jpg',
+    info: 'SALE',
+    precio: 10099,
+    stock: 10,
+  },
+  {
+    id: 8,
+    nombre: 'Ups Lyonn CTB-3000 VA',
+    imagen: 'https://mauronadal.github.io/trabajoFinalJS/img/img-pro-08.jpg',
+    info: 'SALE',
+    precio: 54499,
+    stock: 10,
+  },
+];
