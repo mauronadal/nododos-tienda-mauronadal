@@ -13,6 +13,10 @@ function App() {
       <div className='cart-container'>
       <ItemListContainer texto="Productos" className='producto-container'/>
       </div>
+      <div>
+     
+
+      </div>
     </div>
   );
 }

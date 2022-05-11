@@ -8,9 +8,9 @@ class ItemListContainer extends Component{
 
     render() {
         return (
-<section className="item-list-container">
+<section className="itemListContainer">
 
-            <p className="item-list-container__title">Listado de  {this.props.texto}</p>
+            <p className="itemListContainer__titulo">Listado de  {this.props.texto}</p>
            
             <ItemList />
             </section>

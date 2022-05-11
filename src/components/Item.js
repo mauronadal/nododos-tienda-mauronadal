@@ -15,9 +15,9 @@ const Item = ({ nombre, imagen, precio, stock, info }) => {
       <div className='card-body'>
         <h5 className="card-title">{nombre}</h5>
         <p className="card-text">${precio}</p>
-        <p className="card-info">{info}</p> 
-        <ItemCount stock={stock} onAdd={onAdd} initial={0} />
-      </div>
+        <p className="card-info">{info}</p>
+        <button>Ver Detalle</button>
+        <ItemCount stock={stock} onAdd={onAdd} initial={0} /> </div>  
     </div>
     </>
   );
