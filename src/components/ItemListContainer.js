@@ -1,25 +1,43 @@
-import { Component } from "react";
-
+import React from "react";
+import { useEffect, useState } from "react";
+import { dbproductos } from '../data/productos';
+import ItemList from "./ItemList";
+import { Spinner } from 'react-bootstrap';
 import './styles/ItemListContainer.css';
 
-import ItemList from "./ItemList";
 
-class ItemListContainer extends Component{
+const ItemListContainer = () => {
+    const [items, setItems] = useState([]);
+    const [loading, setLoading] = useState(true); 
+    
 
-    render() {
-        return (
-<section className="itemListContainer">
+    useEffect(() => {
+        setTimeout(() => {
+            const data = new Promise((resolve, reject) => {
+                resolve(dbproductos);
+            });
+            data.then((data) => {
+                setItems(data);
+            });
+            data.catch((err) => {
+                console.log(err);
+            });
+            data.finally(() => {
+                setLoading(false);
+            })
+        }, 2000);
 
-            <p className="itemListContainer__titulo">Listado de  {this.props.texto}</p>
-           
-            <ItemList />
-            </section>
-        )
-    }
-}
+    }, []);
+
+    return (
+        <section className="itemListContainer">
+        {loading? ( <Spinner animation="border" />) : (<ItemList items={items} />)}
+            
+        </section>
+    );
 
 
 
-
+};
 
 export default ItemListContainer;
