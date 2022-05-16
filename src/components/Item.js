@@ -1,11 +1,12 @@
 import React from 'react';
-import ItemCount from './ItemCount';
 import './styles/Item.css';
+import { LinkContainer } from 'react-router-bootstrap';
 
 
-const Item = ({ item}) => {
 
-  const {nombre, imagen, precio, stock, info} = item;
+const Item = ({item}) => {
+
+  const {nombre, imagen, precio, info,} = item;
 
   return (
      
@@ -15,8 +16,10 @@ const Item = ({ item}) => {
          <h5 className="card-title">{nombre}</h5>
          <p className="card-text">${precio}</p>
          <p className="card-info">{info}</p>
+         <LinkContainer to={`/item/${item.id}`}>
          <button>Ver Detalle</button>
-         <ItemCount stock={stock} initial={0} /> </div>  
+         </LinkContainer>
+          </div>  
      </div>
      
 

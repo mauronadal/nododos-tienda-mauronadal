@@ -1,0 +1,20 @@
+
+.detalleContainer {
+    display: flex;
+    margin: 20px 20px;
+    justify-content: center;
+    
+  }
+
+.card-info{
+    color: var(--just-white);
+    text-decoration: solid;
+    background-color: var(--primary-color);
+    
+}
+.card2{
+   width: 20rem;
+   height: 40rem;
+}
+
+

@@ -9,7 +9,7 @@ export default function NavBar() {
         <div>
             <Navbar bg="light" expand="lg">
                 <Container fluid>
-                    <Navbar.Brand href="#">NodoDos Shop</Navbar.Brand>
+                    <LinkContainer to='/'><Navbar.Brand>NodoDos Shop</Navbar.Brand></LinkContainer>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -21,8 +21,13 @@ export default function NavBar() {
                             <LinkContainer to='/about'><Nav.Link>Nosotros</Nav.Link></LinkContainer>
                             <LinkContainer to='/contact'><Nav.Link>Contacto</Nav.Link></LinkContainer>
                             <NavDropdown title="Categorías" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#">Motherboards</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Procesadores</NavDropdown.Item>
+                                <LinkContainer to ='/categoria/monitores'><NavDropdown.Item>Monitores</NavDropdown.Item></LinkContainer>
+                                <LinkContainer to ='/categoria/alimentacion'><NavDropdown.Item>Alimentación</NavDropdown.Item></LinkContainer>
+                                <LinkContainer to ='/categoria/mobiliario'><NavDropdown.Item>Mobiliario</NavDropdown.Item></LinkContainer>
+                                <LinkContainer to ='/categoria/audio'><NavDropdown.Item>Audio</NavDropdown.Item></LinkContainer>
+                                <LinkContainer to ='/categoria/motherboard'><NavDropdown.Item>MotherBoard</NavDropdown.Item></LinkContainer>
+                                <LinkContainer to ='/categoria/teclados'><NavDropdown.Item>Teclados</NavDropdown.Item></LinkContainer>
+                                <LinkContainer to ='/categoria/webcams'><NavDropdown.Item>Web Cams</NavDropdown.Item></LinkContainer>
                                 <NavDropdown.Divider />
                                 <NavDropdown.Item href="#">SALE</NavDropdown.Item>
                             </NavDropdown>

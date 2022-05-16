@@ -7,8 +7,8 @@ import NavBar from './components/NavBar'
 import Home from './views/Home/home'
 import About from './views/About/about'
 import Contact from './views/Contact/contact'
-
 import './index.css';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
@@ -19,6 +19,8 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='/categoria/:categoriaId' element={<Home />} />
+          <Route path='/item/:itemId' element={<ItemDetailContainer />}/>
         </Routes>
 
         <div className='cart-container'>
