@@ -1,34 +1,26 @@
-import React from 'react';
-import './styles/Item.css';
-import { LinkContainer } from 'react-router-bootstrap';
+import React from "react";
+import "./styles/Item.css";
+import { LinkContainer } from "react-router-bootstrap";
+import { Card, Button } from "react-bootstrap";
 
-
-
-const Item = ({item}) => {
-
-  const {nombre, imagen, precio, info,} = item;
+const Item = ({ item }) => {
+  const { nombre, imagen, precio, info } = item;
 
   return (
-     
-     <div className="card">
-       <img className="card-img-top" src={imagen} alt=""/>
-       <div className='card-body'>
-         <h5 className="card-title">{nombre}</h5>
-         <p className="card-text">${precio}</p>
-         <p className="card-info">{info}</p>
-         <LinkContainer to={`/item/${item.id}`}>
-         <button>Ver Detalle</button>
-         </LinkContainer>
-          </div>  
-     </div>
-     
 
-     );
-     
+<Card style={{ width: '20rem' }}>
+  <Card.Img variant="top" src={imagen} alt="" />
+  <Card.Body>
+    <Card.Title>{nombre}</Card.Title>
+    <Card.Text>${precio}</Card.Text>
+    <Card.Text className="card-info">{info}</Card.Text>
+    <LinkContainer to={`/item/${item.id}`}>
+    <Button variant="info">Detalle</Button>
+    </LinkContainer>
+  </Card.Body>
+</Card>
 
+  );
 };
 
-
-
 export default Item;
-

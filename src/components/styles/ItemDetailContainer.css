@@ -1,0 +1,8 @@
+.itemDetailContainer {
+    display: flex;
+    padding: 40px;
+    background-color: var(--body-bg-color);
+    
+       
+  }
+  

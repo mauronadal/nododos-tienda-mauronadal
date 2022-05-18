@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { dbproductos } from "../data/productos";
 import ItemDetail from "./ItemDetail";
 import { Spinner } from "react-bootstrap";
-import "./styles/ItemListContainer.css";
+import "./styles/ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 
 const traerDetalle = (itemId) => {
@@ -14,7 +14,6 @@ const traerDetalle = (itemId) => {
       (detail) => detail.id === conObjeto
     );
 
-    
     setTimeout(() => {
       resolve(detallesFiltrados);
     }, 2000);
@@ -40,11 +39,10 @@ const ItemDetailContainer = () => {
   });
 
   return (
-    <section className="itemListContainer">
+    <section className="itemDetailContainer">
       {loading ? <Spinner animation="border" /> : <ItemDetail item={item} />}
     </section>
   );
 };
-
 
 export default ItemDetailContainer;
