@@ -1,5 +1,5 @@
 import React from "react";
-import "./styles/Item.css";
+import "./Item.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { Card, Button } from "react-bootstrap";
 

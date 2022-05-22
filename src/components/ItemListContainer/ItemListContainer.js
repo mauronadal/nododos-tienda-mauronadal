@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { dbproductos } from "../data/productos";
-import ItemList from "./ItemList";
+import { dbproductos } from "../../data/productos";
+import ItemList from "../ItemList/ItemList";
 import { Spinner } from "react-bootstrap";
-import "./styles/ItemListContainer.css";
+import "./ItemListContainer.css";
 import { useParams } from "react-router-dom";
 
 const traerDatos = (cat) => {

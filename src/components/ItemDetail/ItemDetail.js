@@ -1,6 +1,6 @@
 import React from "react";
-import "./styles/ItemDetail.css";
-import ItemCount from "./ItemCount";
+import "./ItemDetail.css";
+import ItemCount from "../ItemCount/ItemCount";
 import { Card, Container, Row, Col } from "react-bootstrap";
 
 

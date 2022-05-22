@@ -1,9 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { dbproductos } from "../data/productos";
-import ItemDetail from "./ItemDetail";
+import { dbproductos } from "../../data/productos";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
-import "./styles/ItemDetailContainer.css";
+import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 
 const traerDetalle = (itemId) => {
