@@ -1,13 +1,24 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect, useContext } from "react";
+import { CartContext } from "../../Context/CardContext";
 
 import "./ItemCount.css";
 
-const ItemCount = ({ initial, stock, onAdd }) => {
+const ItemCount = ({ initial, stock, item }) => {
   const [cantidad, setCantidad] = useState(initial);
+
+  const {addItem} = useContext(CartContext);
+
+  useEffect(() => {
+    setCantidad(initial);
+  }, [initial]);
 
   const addProducto = (num) => {
     setCantidad(cantidad + num);
+  };
+
+  const onAddHandle = () => {
+    addItem(item, cantidad);
   };
 
   return (
@@ -32,10 +43,10 @@ const ItemCount = ({ initial, stock, onAdd }) => {
 
       <button
         className="boton_agregar"
-        onClick={() => onAdd(cantidad)}
+        onClick={() => onAddHandle()}
         disabled={stock === 0 ? true : null}
       >
-        Añadir
+        Añadir al Carrido
       </button>
     </div>
   );
