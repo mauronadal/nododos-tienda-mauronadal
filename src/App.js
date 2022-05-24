@@ -7,7 +7,7 @@ import About from './views/About/about'
 import Contact from './views/Contact/contact'
 import './index.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import CartProvider from './Context/CardContext';
+import CartProvider from './Context/CartContext';
 
 
 

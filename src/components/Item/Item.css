@@ -5,4 +5,22 @@
     
 }
 
+.boton_detalle {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    margin-top: 20px;
+    padding: 0 15px;
+  }
+
+  .boton_detalle:hover {
+    background-color: var(--primary-color) ;
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    margin-top: 20px;
+    padding: 0 15px;
+
+  }
+  
+
 

@@ -1,16 +1,17 @@
-import React from "react";
-import "./ItemDetail.css";
+import React, { useState } from "react";
+import { Link} from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.css";
 import { Card, Container, Row, Col } from "react-bootstrap";
 
 
-
-
 const ItemDetail = ({ item }) => {
-  console.log({ item });
+  const [cantidad, setCantidad] = useState(0);
+  
+console.log("cantidad", cantidad);
 
-  const onAdd = (cantidad) => {
-    alert(`Has agregado ${cantidad} productos`)
+  const onAdd = (value) => { 
+    setCantidad(value);
   };
 
   return (
@@ -26,31 +27,19 @@ const ItemDetail = ({ item }) => {
       <Card.Text>${item.precio}</Card.Text>
       <p className="card-info">{item.info}</p>
       <p className="card-text">Stock:{item.stock}</p>
-      <ItemCount stock={item.stock} initial={0} onAdd={onAdd} item={item} />{" "} <div/>
+      
+      {cantidad === 0 ? (
+        <ItemCount stock={item.stock} initial={0} onAdd={onAdd} item={item} />
+      ) : (
+        <Link to="/cart">
+          <button className="boton_terminar">Terminar compra</button>
+        </Link>
+      )}
+      
     </Card.Body>
   </Card>
 </Container>
-   
-   
-   
-   
-   
-   
-   
-   
-   
-    // <div className="detalleContainer2">
-   //   <div className="card2">
-   //     <img className="card-img-top" src={item.imagen} alt={item.nombre} />
-   //     <div className="card-body">
-   //       <h5 className="card-title">{item.nombre}</h5>
-   //       <p className="card-text">${item.precio}</p>
-   //       <p className="card-info">{item.info}</p>
-   //       <p className="card-text">Stock:{item.stock}</p>
-   //       <ItemCount stock={item.stock} initial={0} />{" "}
-   //     </div>
-   //   </div>
-   // </div>
+  
   );
 };
 

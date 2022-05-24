@@ -1,7 +1,7 @@
 import React from "react";
 import "./Item.css";
 import { LinkContainer } from "react-router-bootstrap";
-import { Card, Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 const Item = ({ item }) => {
   const { nombre, imagen, precio, info } = item;
@@ -15,7 +15,7 @@ const Item = ({ item }) => {
     <Card.Text>${precio}</Card.Text>
     <Card.Text className="card-info">{info}</Card.Text>
     <LinkContainer to={`/item/${item.id}`}>
-    <Button variant="info">Detalle</Button>
+    <button className="boton_detalle">Detalle</button>
     </LinkContainer>
   </Card.Body>
 </Card>

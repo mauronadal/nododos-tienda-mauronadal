@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect, useContext } from "react";
-import { CartContext } from "../../Context/CardContext";
+import { CartContext } from "../../Context/CartContext";
 
 import "./ItemCount.css";
 
-const ItemCount = ({ initial, stock, item }) => {
+const ItemCount = ({ initial, stock, item, onAdd }) => {
   const [cantidad, setCantidad] = useState(initial);
 
   const {addItem} = useContext(CartContext);
@@ -19,6 +19,7 @@ const ItemCount = ({ initial, stock, item }) => {
 
   const onAddHandle = () => {
     addItem(item, cantidad);
+    onAdd(cantidad);
   };
 
   return (
