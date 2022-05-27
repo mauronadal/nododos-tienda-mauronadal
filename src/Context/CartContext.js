@@ -27,7 +27,7 @@ const CartProvider = ({ children }) => {
   };
 
   const removeItem = (itemId) => {
-    const newCart = cart.filter((element) => element.producto[0].id !== itemId);
+    const newCart = cart.filter((element) => element.producto.id !== itemId);
 
     setCart(newCart);
   };
@@ -37,7 +37,7 @@ const CartProvider = ({ children }) => {
   };
 
   const isInCart = (id) => {
-    const findItem = cart.find((element) => element.producto[0].id === id);
+    const findItem = cart.find((element) => element.producto.id === id);
     return findItem ? true : false;
   };
 

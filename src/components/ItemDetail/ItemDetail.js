@@ -31,9 +31,15 @@ console.log("cantidad", cantidad);
       {cantidad === 0 ? (
         <ItemCount stock={item.stock} initial={0} onAdd={onAdd} item={item} />
       ) : (
-        <Link to="/cart">
-          <button className="boton_terminar">Terminar compra</button>
+        <div><Link to="/">
+          <button className="boton_terminar">Seguir comprando</button>
         </Link>
+        
+        <Link to="/Cart">
+        <button className="boton_terminar">Terminar compra</button>
+      </Link>
+      </div>
+        
       )}
       
     </Card.Body>

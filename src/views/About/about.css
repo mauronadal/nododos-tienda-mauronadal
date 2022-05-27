@@ -1,14 +1,7 @@
-.itemListContainer {
+.aboutContainer {
     width: 100%;
     padding: 30px;
-    height: 100%;
+    height: 100vh;
     background-color: var(--body-bg-color);
        
   }
-  
-
-
-
-
-  
-  

@@ -2,11 +2,12 @@ import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import CartWidget from "../CartWidget/CartWidget";
 import { LinkContainer } from "react-router-bootstrap";
+import "./navBar.css"
 
 export default function NavBar() {
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar  expand="lg" className="navbarContainer" >
         <Container fluid>
           <LinkContainer to="/">
             <Navbar.Brand>NodoDos Shop</Navbar.Brand>
@@ -27,7 +28,7 @@ export default function NavBar() {
               <LinkContainer to="/contact">
                 <Nav.Link>Contacto</Nav.Link>
               </LinkContainer>
-              <NavDropdown title="Categorías" id="navbarScrollingDropdown">
+              <NavDropdown title="Categorías" id="navbarScrollingDropdown" >
                 <LinkContainer to="/categoria/monitores">
                   <NavDropdown.Item>Monitores</NavDropdown.Item>
                 </LinkContainer>

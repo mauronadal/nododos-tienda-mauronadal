@@ -8,6 +8,7 @@ import Contact from './views/Contact/contact'
 import './index.css';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import CartProvider from './Context/CartContext';
+import Cart from './components/Cart/Cart';
 
 
 
@@ -25,6 +26,8 @@ function App() {
           <Route path='/contact' element={<Contact />} />
           <Route path='/categoria/:categoriaId' element={<Home />} />
           <Route path='/item/:itemId' element={<ItemDetailContainer />}/>
+          <Route path="/cart" element={<Cart />}/>
+        
         </Routes>
 
         <div className='cart-container'>
