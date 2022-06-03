@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from "react";
 import { db } from "../../firebase/firebaseConfig";
-import { collection, query, getDocs } from "firebase/firestore";
+import { collection, query, getDocs, where } from "firebase/firestore";
+import { useParams } from "react-router-dom";
 
 import { Spinner } from "react-bootstrap";
-import "./ItemListContainer.css";
-import ItemList from "../ItemList/ItemList";
+import "../../components/ItemListContainer/ItemListContainer.css";
+import ItemList from "../../components/ItemList/ItemList";
 
-const ItemListContainer = () => {
+const ItemCategoriaId = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { categoriaId } = useParams();
+
   useEffect(() => {
     const getItems = async () => {
-      const q = query(collection(db, "productos"));
+      const q = query(
+        collection(db, "productos"),
+        where("categoria", "==", categoriaId)
+      );
       const docs = [];
       const querySnapshot = await getDocs(q);
-      // console.log('DATA:', querySnapshot);
+
       querySnapshot.forEach((doc) => {
-        // console.log('DATA:', doc.data(), 'ID:', doc.id);
         docs.push({ ...doc.data(), id: doc.id });
       });
-      //	console.log(docs);
+
       setItems(docs);
     };
     getItems();
     setTimeout(() => {
       setIsLoading(false);
-    }, 1000);
-  }, []);
+    }, 500);
+  }, [categoriaId]);
 
   return (
     <section className="itemListContainer">
@@ -42,4 +47,4 @@ const ItemListContainer = () => {
   );
 };
 
-export default ItemListContainer;
+export default ItemCategoriaId;

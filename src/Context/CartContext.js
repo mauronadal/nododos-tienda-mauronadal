@@ -6,7 +6,7 @@ const CartProvider = ({ children }) => {
 
   const addItem = (item, cantidad) => { 
     const itemIndex = cart.findIndex(
-      (itemProd) => itemProd.producto.id === item.id
+      (itemProd) => itemProd.producto[0].id === item[0].id
     );
 
     if (itemIndex === -1) {
@@ -27,7 +27,7 @@ const CartProvider = ({ children }) => {
   };
 
   const removeItem = (itemId) => {
-    const newCart = cart.filter((element) => element.producto.id !== itemId);
+    const newCart = cart.filter((element) => element.producto[0].id !== itemId);
 
     setCart(newCart);
   };
@@ -37,7 +37,7 @@ const CartProvider = ({ children }) => {
   };
 
   const isInCart = (id) => {
-    const findItem = cart.find((element) => element.producto.id === id);
+    const findItem = cart.find((element) => element.producto[0].id === id);
     return findItem ? true : false;
   };
 
@@ -49,7 +49,7 @@ const CartProvider = ({ children }) => {
 
   const cartTotalPrecio = () => { 
     return cart.reduce((acumulador, item) => { 
-      return acumulador + item.cantidadproducto * item.producto.precio;
+      return acumulador + item.cantidadproducto * item.producto[0].precio;
     }, 0);
   };
 

@@ -7,8 +7,8 @@ body {
   /*colors*/
   --primary-color: #b0b435;
   --secondary-color: #cdcf86;
-  --body-bg-color: #933df5;
-  --border-color: #555555;
+  --body-bg-color: #fff;
+  --border-color: #933df5;
   --success-color: #4f8a10;
   --error-color: #d8000c;
   --info-color: #b0b435;

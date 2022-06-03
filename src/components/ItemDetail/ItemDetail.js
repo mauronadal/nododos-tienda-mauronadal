@@ -8,7 +8,7 @@ import { Card, Container, Row, Col } from "react-bootstrap";
 const ItemDetail = ({ item }) => {
   const [cantidad, setCantidad] = useState(0);
   
-console.log("cantidad", cantidad);
+// console.log("cantidad", item);
 
   const onAdd = (value) => { 
     setCantidad(value);
@@ -20,13 +20,13 @@ console.log("cantidad", cantidad);
     <Card style={{ width: '100%' }}>
     <Card.Body>
       <Row>
-        <Col sm={6}>  <Card.Img style={{width: '80%' }} variant="top" src={item.imagen} alt={item.nombre} /></Col>
-        <Col sm={6}> <Card.Title style={{margin: '20px'}} >{item.nombre}</Card.Title><p className="card-text">{item.detalle}</p></Col>
+        <Col sm={6}>  <Card.Img style={{width: '80%' }} variant="top" src={item[0].imagen} alt={item[0].nombre} /></Col>
+        <Col sm={6}> <Card.Title style={{margin: '20px'}} >{item[0].nombre}</Card.Title><p className="card-text">{item[0].detalle}</p></Col>
       </Row>
          
-      <Card.Text>${item.precio}</Card.Text>
-      <p className="card-info">{item.info}</p>
-      <p className="card-text">Stock:{item.stock}</p>
+      <Card.Text>${item[0].precio}</Card.Text>
+      <p className="card-info">{item[0].info}</p>
+      <p className="card-text">Stock:{item[0].stock}</p>
       
       {cantidad === 0 ? (
         <ItemCount stock={item.stock} initial={0} onAdd={onAdd} item={item} />

@@ -48,18 +48,18 @@ const Cart = () => {
                       <th scope="row">
                         <img
                           style={{ width: "20%" }}
-                          src={producto.producto.imagen}
-                          alt={producto.producto.nombre}
+                          src={producto.producto[0].imagen}
+                          alt={producto.producto[0].nombre}
                         />
                       </th>
-                      <td>{producto.producto.nombre}</td>
-                      <td>${producto.producto.precio}</td>
+                      <td>{producto.producto[0].nombre}</td>
+                      <td>${producto.producto[0].precio}</td>
                       <td>{producto.cantidadproducto}</td>
                       <td>
                         <button
                           className="boton"
                           onClick={() => {
-                            deleteItem(producto.producto.id);
+                            deleteItem(producto.producto[0].id);
                           }}
                         >
                           Eliminar

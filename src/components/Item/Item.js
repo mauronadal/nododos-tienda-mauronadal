@@ -3,13 +3,14 @@ import "./Item.css";
 import { LinkContainer } from "react-router-bootstrap";
 import { Card } from "react-bootstrap";
 
+
 const Item = ({ item }) => {
   const { nombre, imagen, precio, info } = item;
 
   return (
 
-<Card style={{ width: '20rem' }}>
-  <Card.Img variant="top" src={imagen} alt="" />
+<Card className="Card">
+  <Card.Img className="Imagen" variant="top" src={imagen} alt={nombre} />
   <Card.Body>
     <Card.Title>{nombre}</Card.Title>
     <Card.Text>${precio}</Card.Text>

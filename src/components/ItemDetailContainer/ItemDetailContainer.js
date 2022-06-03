@@ -1,46 +1,52 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { dbproductos } from "../../data/productos";
+import React, { useEffect, useState } from "react";
+import { db } from "../../firebase/firebaseConfig";
+import {
+  collection,
+  query,
+  getDocs,
+  where,
+  documentId,
+} from "firebase/firestore";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { Spinner } from "react-bootstrap";
 import "./ItemDetailContainer.css";
 import { useParams } from "react-router-dom";
 
-const traerDetalle = (itemId) => {
-  const conObjeto = parseInt(itemId);
-
-  return new Promise((resolve, reject) => {
-    const detallesFiltrados = dbproductos.filter(
-      (detail) => detail.id === conObjeto
-    );
-
-    setTimeout(() => {
-      resolve(detallesFiltrados);
-    }, 2000);
-  });
-};
-
 const ItemDetailContainer = () => {
   const [item, setItem] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { itemId } = useParams();
 
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    traerDetalle(itemId)
-      .then((res) => {
-        setItem(res[0]);
-      })
-      .catch((error) => console.log(error));
+    const getItem = async () => {
+      const q = query(
+        collection(db, "productos"),
+        where(documentId(), "==", itemId)
+      );
+      const docs = [];
+      const querySnapshot = await getDocs(q);
+
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setItem(docs);
+    };
+    getItem();
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
   }, [itemId]);
-  traerDetalle(itemId).finally(() => {
-    setLoading(false);
-  });
 
   return (
     <section className="itemDetailContainer">
-      {loading ? <Spinner animation="border" /> : <ItemDetail item={item} />}
+      {isLoading ? (
+        <div>
+          <Spinner animation="border" />
+        </div>
+      ) : (
+        <ItemDetail item={item} />
+      )}
     </section>
   );
 };
