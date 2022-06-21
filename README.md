@@ -17,15 +17,15 @@ npm install
 
 ## Dependencias utilizadas:
 
-https://v5.reactrouter.com/web/guides/philosophy
+React Router [https://v5.reactrouter.com](https://v5.reactrouter.com).
 
-https://mui.com/
+Se utilizo la librería Material-ui para el Formulario (Componente TextField) [https://mui.com/](https://mui.com/).
 
-https://react-bootstrap.github.io/
+React-Bootstrap en Card, NavBar, Spinner [https://react-bootstrap.github.io/](https://react-bootstrap.github.io/).
 
-https://firebase.google.com
+Servicio de Firebase de Google para la base de datos [https://firebase.google.com](https://firebase.google.com).
 
-
+Sweetalert2 en los mensajes de alerta [https://sweetalert2.github.io/](https://sweetalert2.github.io/).
 
 
 
