@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { CartContext } from "../../Context/CartContext";
 import Message from "../Message/Message";
@@ -13,6 +13,7 @@ const initialState = {
   name: "",
   phone: "",
   email: "",
+  email2: "",
 };
 
 const CartForm = () => {
@@ -31,7 +32,7 @@ const CartForm = () => {
   const date = Timestamp.fromDate(new Date());
 
   const [compra, setCompra] = useState(initialState);
-  // Este estado está destinado a guardar el id de la compra
+
   const [compraID, setCompraID] = useState("");
 
   const handleOnChange = (e) => {
@@ -41,7 +42,7 @@ const CartForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // Add a new document with a generated id.
+
     const docRef = await addDoc(collection(db, "ordenes"), {
       compra,
       items,
@@ -54,12 +55,26 @@ const CartForm = () => {
     setCompra(initialState);
   };
 
+  const [activarBoton, setActivarBoton] = useState(true);
+
+  useEffect(() => {
+    if (
+      compra.name !== "" &&
+      compra.phone !== "" &&
+      compra.email !== "" &&
+      compra.email2 !== "" &&
+      compra.email === compra.email2
+    ) {
+      setActivarBoton(false);
+    }
+  }, [compra.name, compra.phone, compra.email, compra.email2]);
+
   return (
     <div className="container-general">
       <div className="container-cart">
         <h1>Checkout</h1>
-        <table class="table">
-          <thead class="thead-dark">
+        <table className="table">
+          <thead className="thead-dark">
             <tr>
               <th scope="col">Cantidad</th>
               <th scope="col">Nombre</th>
@@ -91,7 +106,9 @@ const CartForm = () => {
             placeholder="Apellido y Nombre"
             name="name"
             value={compra.name}
-            onChange={handleOnChange}
+            onChange={(e) => {
+              handleOnChange(e);
+            }}
           />
           <TextField
             label="Teléfono"
@@ -99,7 +116,9 @@ const CartForm = () => {
             margin="dense"
             name="phone"
             value={compra.phone}
-            onChange={handleOnChange}
+            onChange={(e) => {
+              handleOnChange(e);
+            }}
           />
           <TextField
             placeholder="E-mail"
@@ -107,9 +126,23 @@ const CartForm = () => {
             label="E-mail"
             name="email"
             value={compra.email}
-            onChange={handleOnChange}
+            onChange={(e) => {
+              handleOnChange(e);
+            }}
           />
-          <button className="boton">Finalizar Compra</button>
+          <TextField
+            placeholder="E-mail2"
+            margin="dense"
+            label="Repetir E-mail"
+            name="email2"
+            value={compra.email2}
+            onChange={(e) => {
+              handleOnChange(e);
+            }}
+          />
+          <button className="boton" disabled={activarBoton}>
+            Finalizar Compra
+          </button>
         </form>
         {compraID && <Message compraID={compraID} />}
       </div>

@@ -15,12 +15,11 @@ const ItemListContainer = () => {
       const q = query(collection(db, "productos"));
       const docs = [];
       const querySnapshot = await getDocs(q);
-      // console.log('DATA:', querySnapshot);
+
       querySnapshot.forEach((doc) => {
-        // console.log('DATA:', doc.data(), 'ID:', doc.id);
         docs.push({ ...doc.data(), id: doc.id });
       });
-      //	console.log(docs);
+
       setItems(docs);
     };
     getItems();

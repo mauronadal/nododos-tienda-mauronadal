@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../Context/CartContext";
 
-
 import "./cart.css";
 
 const Cart = () => {
@@ -18,10 +17,10 @@ const Cart = () => {
   };
 
   return (
-    <div className="container-general">
+    <div className="containerCart">
       {cartTotalItem() !== 0 ? (
         <div className="container-cart">
-          <h1>Carrito de compra</h1>
+          <h1 className="titulo">Carrito de compra</h1>
           <button
             className="boton"
             onClick={() => {
@@ -43,7 +42,6 @@ const Cart = () => {
               </thead>
               <tbody>
                 {cart.map((producto) => {
-                  console.log(producto);
                   return (
                     <tr key={producto.id}>
                       <th scope="row">
