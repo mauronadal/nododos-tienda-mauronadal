@@ -18,9 +18,13 @@ npm install
 ## Dependencias utilizadas:
 
 https://v5.reactrouter.com/web/guides/philosophy
+
 https://mui.com/
+
 https://react-bootstrap.github.io/
+
 https://firebase.google.com
+
 
 
 
