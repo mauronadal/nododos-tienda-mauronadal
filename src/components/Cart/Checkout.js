@@ -131,7 +131,7 @@ const CartForm = () => {
             }}
           />
           <TextField
-            placeholder="E-mail2"
+            placeholder="Repetir E-mail"
             margin="dense"
             label="Repetir E-mail"
             name="email2"

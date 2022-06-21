@@ -1,7 +1,7 @@
 # Tienda E-Commerce NodoDos - Productos Tecnologicos - CoderHouse - React
 ## Nombre y Apeliido: Mauro Nadal
 
-## Content
+
 
 ## Demo
 
@@ -10,7 +10,7 @@ Si quieres ver el demo del proyecto, puedes visitar: [ir al proyecto](https://no
 
 ## Installation
 
-Para instalar y ejecitar este proyecto solo execute 
+Para instalar y ejecutar este proyecto solo execute 
 ```bash
 npm install
 ```
